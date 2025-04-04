@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9ec32c734a8134db53085253c20f19, type: 3}
+  m_Name: TilesSpritesConfig
+  m_EditorClassIdentifier: 
+  _models:
+  - _value: 2
+    _sprite: {fileID: 21300000, guid: 6567dad9dd654ac4ebb6450f6964cec2, type: 3}
+  - _value: 4
+    _sprite: {fileID: 21300000, guid: 459495e7d2d43124bbe1aaf56e0ddab6, type: 3}
+  - _value: 8
+    _sprite: {fileID: 21300000, guid: a904c74621802fd4687d9a7d393a7574, type: 3}
+  - _value: 16
+    _sprite: {fileID: 21300000, guid: 31b5f005807829c43a15972920d0bdf2, type: 3}
+  - _value: 32
+    _sprite: {fileID: 21300000, guid: e7efee51760177449a11b9743a390050, type: 3}
+  - _value: 64
+    _sprite: {fileID: 21300000, guid: 3c86aa47ec96f7244965e5a91dcc0ba8, type: 3}
+  - _value: 128
+    _sprite: {fileID: 21300000, guid: 9b3c78a38c132bf4aa5867d806d02df6, type: 3}
+  - _value: 256
+    _sprite: {fileID: 21300000, guid: e44815aff9411594f946e85e4cbd664c, type: 3}
+  - _value: 512
+    _sprite: {fileID: 21300000, guid: 96a749a3693b58d4db9c9831f031bc5b, type: 3}
+  - _value: 1024
+    _sprite: {fileID: 21300000, guid: b70eb5fbd5b7a6b48924f65c4897dcf4, type: 3}
+  - _value: 2048
+    _sprite: {fileID: 21300000, guid: cb3e6f35d5672d94580b82ad0402c600, type: 3}
+  - _value: 4096
+    _sprite: {fileID: 21300000, guid: 086b8d1e09035fb40808d5b1f5c1c484, type: 3}
+  - _value: 8192
+    _sprite: {fileID: 21300000, guid: 04b5a78e1d16d9045be9ba12274a4108, type: 3}
+  - _value: 16384
+    _sprite: {fileID: 21300000, guid: 88f74896405495649b940b5dbe73d3e8, type: 3}
+  - _value: 32768
+    _sprite: {fileID: 21300000, guid: cd6a1c06109a8684b9ace62ce6963fc8, type: 3}
+  - _value: 65536
+    _sprite: {fileID: 21300000, guid: 666c262808977e343bbabedc9f26f5cf, type: 3}
+  - _value: 131072
+    _sprite: {fileID: 21300000, guid: 2f2be99c377c8c24cb1c3892684968af, type: 3}
+  - _value: 262144
+    _sprite: {fileID: 21300000, guid: ef8c0b1adad97904996ad6f5f59a6fa1, type: 3}
