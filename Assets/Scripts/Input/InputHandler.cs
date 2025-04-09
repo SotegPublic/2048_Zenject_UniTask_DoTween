@@ -6,12 +6,13 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class InputHandler : IDisposable, ISwipeInput, ITickable
 {
-    public Action<Vector2> OnSwipe { get; set; }
-    public Action OnSwipeEnd { get; set; }
+    public Action<Vector2> OnSwipeEnd { get; set; }
     
     private PlayerInput _playerInput;
     private bool _isSwipe;
     private Vector2 _startPosition;
+
+    private Vector2 delta;
 
     [Inject]
     public void Construct()
@@ -31,8 +32,8 @@ public class InputHandler : IDisposable, ISwipeInput, ITickable
 
     private void OnTouchEnd(CallbackContext context)
     {
+        OnSwipeEnd?.Invoke(delta);
         _isSwipe = false;
-        OnSwipeEnd?.Invoke();
     }
 
     public void LocalUpdate()
@@ -40,9 +41,8 @@ public class InputHandler : IDisposable, ISwipeInput, ITickable
         if (!_isSwipe)
             return;
 
-        var delta = _startPosition - _playerInput.Player.Swipe.ReadValue<Vector2>();
+        delta = _startPosition - _playerInput.Player.Swipe.ReadValue<Vector2>();
 
-        OnSwipe?.Invoke(delta);
     }
 
     public void Dispose()

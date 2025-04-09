@@ -6,39 +6,27 @@ public class AwaitInputState : BaseTurnState<IChangableDirectionModel>, IDisposa
     private ICurrentGameStateHolder _stateHolder;
     private ISwipeInput _input;
 
-    private bool _isInSwipeProcess;
-
     public AwaitInputState(IChangableDirectionModel model, ICurrentGameStateHolder gameStateHolder, ISwipeInput swipeInput) : base(model)
     {
         _stateHolder = gameStateHolder;
         _input = swipeInput;
 
-        _input.OnSwipe += Swipe;
-        _input.OnSwipeEnd += WhenSwipeEnd;
+        _input.OnSwipeEnd += Swipe;
     }
 
     private void Swipe(Vector2 delta)
     {
-        if (_isInSwipeProcess)
-            return;
-
         if (_turnModel.CurrentState != this.GetType())
             return;
 
         if (_stateHolder.GetCurrentGameState() != typeof(GameInProgressState))
             return;
 
-        if (delta.sqrMagnitude < 2000)
+        if (delta.sqrMagnitude < 200)
             return;
 
-        _isInSwipeProcess = true;
         _turnModel.CurrentDir = GetDirection(delta);
         _turnModel.OnStateEnd?.Invoke(this.GetType());
-    }
-
-    private void WhenSwipeEnd()
-    {
-        _isInSwipeProcess = false;
     }
 
     private DirectionType GetDirection(Vector2 delta)
@@ -59,7 +47,6 @@ public class AwaitInputState : BaseTurnState<IChangableDirectionModel>, IDisposa
 
     public void Dispose()
     {
-        _input.OnSwipe -= Swipe;
-        _input.OnSwipeEnd -= WhenSwipeEnd;
+        _input.OnSwipeEnd -= Swipe;
     }
 }
